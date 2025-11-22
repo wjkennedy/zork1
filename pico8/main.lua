@@ -70,32 +70,18 @@ function execute_command(raw)
 
   if verb == "look" then
     describe_location(true)
-  elseif verb == "inventory" then
+  elseif verb == "inventory" or verb == "i" then
     show_inventory()
-  elseif verb == "examine" then
-    examine_object(noun)
-  elseif verb == "read" then
-    read_object(noun)
   elseif is_direction(verb) then
     move_player(verb)
-  elseif verb == "go" then
-    if noun == "" then
-      add_output("Go where?")
-    else
-      move_player(synonyms[noun] or noun)
-    end
   elseif verb == "take" then
     take_object(noun)
   elseif verb == "drop" then
     drop_object(noun)
   elseif verb == "open" and noun == "mailbox" then
     open_mailbox()
-  elseif verb == "open" and noun == "window" then
-    open_window()
-  elseif verb == "close" and noun == "window" then
-    close_window()
   elseif verb == "help" then
-    add_output("Supported: look/l, n/s/e/w/in/out, take/drop <obj>, inventory, examine/read <obj>")
+    add_output("Supported: look, n/s/e/w, take <obj>, drop <obj>, inventory")
   else
     add_output("I don't know how to '" .. verb .. "'.")
   end
@@ -118,28 +104,15 @@ end
 function is_direction(word)
   return word == "north" or word == "south" or word == "east" or word == "west" or
          word == "northeast" or word == "northwest" or word == "southeast" or word == "southwest" or
-         word == "up" or word == "down" or word == "in" or word == "out"
+         word == "up" or word == "down"
 end
 
 function move_player(direction)
-  if not direction or direction == "" then
-    add_output("You can't go that way.")
-    return
-  end
-
-  if direction == "in" then
-    crawl_inside()
-    return
-  elseif direction == "out" then
-    crawl_out()
-    return
-  end
-
   local room = rooms[player.location]
   local target = room.exits and room.exits[sub(direction, 1, 1)] or nil
   if target then
     player.location = target
-    describe_location(true)
+    describe_location()
   else
     add_output("You can't go that way.")
   end
@@ -159,14 +132,7 @@ function objects_at_location(loc)
   local results = {}
   for _, obj in pairs(objects) do
     if obj.location == loc then
-      if obj.name == "window" then
-        local descriptor = obj.open and "an open window" or "a small window (closed)"
-        add(results, descriptor)
-      elseif obj.list_name then
-        add(results, obj.list_name)
-      else
-        add(results, obj.name)
-      end
+      add(results, obj.name)
     elseif obj.location == "mailbox" and loc == "west_of_house" and obj.name == "leaflet" then
       add(results, "a leaflet in the mailbox")
     end
@@ -221,7 +187,7 @@ function show_inventory()
   else
     local names = {}
     for item in all(player.inventory) do
-      add(names, objects[item].list_name or objects[item].name)
+      add(names, objects[item].name)
     end
     add_output("You are carrying " .. join_list(names) .. ".")
   end
@@ -241,125 +207,12 @@ function open_mailbox()
   end
 end
 
-function open_window()
-  if player.location ~= "behind_house" then
-    add_output("There's nothing here you can open that way.")
-    return
-  end
-
-  if objects.window.open then
-    add_output("The window is already open.")
-  else
-    objects.window.open = true
-    add_output("With some effort, you open the window wide enough to enter.")
-  end
-end
-
-function close_window()
-  if player.location ~= "behind_house" and player.location ~= "kitchen" then
-    add_output("There is no window you can close here.")
-    return
-  end
-
-  if not objects.window.open then
-    add_output("The window is already closed.")
-  else
-    objects.window.open = false
-    add_output("You close the window.")
-  end
-end
-
-function crawl_inside()
-  if player.location ~= "behind_house" then
-    add_output("You can't go that way.")
-    return
-  end
-
-  if objects.window.open then
-    player.location = "kitchen"
-    add_output("You crawl through the window and find yourself in the kitchen.")
-    describe_location(true)
-  else
-    add_output("The window is closed and too small to pass through as-is.")
-  end
-end
-
-function crawl_out()
-  if player.location == "kitchen" then
-    if objects.window.open then
-      player.location = "behind_house"
-      add_output("You squeeze back out the kitchen window.")
-      describe_location(true)
-    else
-      add_output("The window is closed and you can't get through.")
-    end
-  else
-    add_output("You can't go that way.")
-  end
-end
-
 function add_output(text)
   for line in all(wrap_text(text)) do
     add(text_buffer, line)
   end
   while #text_buffer > max_lines do
     deli(text_buffer, 1)
-  end
-end
-
-function find_object(noun)
-  for id, obj in pairs(objects) do
-    if obj.name == noun then
-      return id, obj
-    end
-  end
-  return nil, nil
-end
-
-function read_object(noun)
-  if noun == "" then
-    add_output("Read what?")
-    return
-  end
-
-  local id, obj = find_object(noun)
-  if not id then
-    add_output("There's nothing like that to read.")
-    return
-  end
-
-  if obj.location == "inventory" or obj.location == player.location or (obj.location == "mailbox" and player.location == "west_of_house") then
-    if id == "leaflet" then
-      add_output("WELCOME TO ZORK! Adventure awaits inside.")
-    else
-      add_output("There's nothing written on the " .. noun .. ".")
-    end
-  else
-    add_output("You can't see any " .. noun .. " here.")
-  end
-end
-
-function examine_object(noun)
-  if noun == "" then
-    add_output("Examine what?")
-    return
-  end
-
-  local id, obj = find_object(noun)
-  if not id then
-    add_output("You don't see that here.")
-    return
-  end
-
-  if obj.location == player.location or obj.location == "inventory" or (obj.location == "mailbox" and player.location == "west_of_house") then
-    if id == "window" then
-      local state = obj.open and "It is open wide enough to crawl through." or "It looks like it could be pried open."
-      add_output(obj.description .. " " .. state)
-    else
-      add_output(obj.description or ("It's just a " .. noun .. "."))
-    end
-  else
-    add_output("You don't see that here.")
   end
 end
 
