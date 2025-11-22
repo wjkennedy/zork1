@@ -1,0 +1,1078 @@
+{
+  "rooms": [
+    {
+      "id": "SOUTH-TEMPLE",
+      "name": "Altar",
+      "description": "This is the south end of a large temple. In front of you is what appears to be an altar. In one corner is a small hole in the floor which leads into darkness. You probably could not get back up it.",
+      "exits": {
+        "north": "NORTH-TEMPLE",
+        "down": "TINY-CAVE"
+      }
+    },
+    {
+      "id": "ARAGAIN-FALLS",
+      "name": "Aragain Falls",
+      "description": "Aragain Falls",
+      "exits": {
+        "north": "SHORE",
+        "west": "ON-RAINBOW",
+        "up": "ON-RAINBOW"
+      }
+    },
+    {
+      "id": "ATLANTIS-ROOM",
+      "name": "Atlantis Room",
+      "description": "This is an ancient room, long under water. There is an exit to the south and a staircase leading up.",
+      "exits": {
+        "south": "RESERVOIR-NORTH",
+        "up": "SMALL-CAVE"
+      }
+    },
+    {
+      "id": "ATTIC",
+      "name": "Attic",
+      "description": "This is the attic. The only exit is a stairway leading down.",
+      "exits": {
+        "down": "KITCHEN"
+      }
+    },
+    {
+      "id": "BAT-ROOM",
+      "name": "Bat Room",
+      "description": "Bat Room",
+      "exits": {
+        "south": "SQUEEKY-ROOM",
+        "east": "SHAFT-ROOM"
+      }
+    },
+    {
+      "id": "EAST-OF-HOUSE",
+      "name": "Behind House",
+      "description": "Behind House",
+      "exits": {
+        "north": "NORTH-OF-HOUSE",
+        "south": "SOUTH-OF-HOUSE",
+        "east": "CLEARING",
+        "west": "KITCHEN",
+        "nw": "NORTH-OF-HOUSE",
+        "sw": "SOUTH-OF-HOUSE",
+        "in": "KITCHEN"
+      }
+    },
+    {
+      "id": "CANYON-BOTTOM",
+      "name": "Canyon Bottom",
+      "description": "You are beneath the walls of the river canyon which may be climbable here. The lesser part of the runoff of Aragain Falls flows by below. To the north is a narrow path.",
+      "exits": {
+        "north": "END-OF-RAINBOW",
+        "up": "CLIFF-MIDDLE"
+      }
+    },
+    {
+      "id": "CANYON-VIEW",
+      "name": "Canyon View",
+      "description": "You are at the top of the Great Canyon on its west wall. From here there is a marvelous view of the canyon and parts of the Frigid River upstream. Across the canyon, the walls of the White Cliffs join the mighty ramparts of the Flathead Mountains to the east. Following the Canyon upstream to the north, Aragain Falls may be seen, complete with rainbow. The mighty Frigid River flows out from a great dark cavern. To the west and south can be seen an immense forest, stretching for miles around. A path leads northwest. It is possible to climb down into the canyon from here.",
+      "exits": {
+        "east": "CLIFF-MIDDLE",
+        "west": "FOREST-3",
+        "nw": "CLEARING",
+        "down": "CLIFF-MIDDLE"
+      }
+    },
+    {
+      "id": "SMALL-CAVE",
+      "name": "Cave",
+      "description": "This is a tiny cave with entrances west and north, and a staircase leading down.",
+      "exits": {
+        "north": "MIRROR-ROOM-1",
+        "south": "ATLANTIS-ROOM",
+        "west": "TWISTING-PASSAGE",
+        "down": "ATLANTIS-ROOM"
+      }
+    },
+    {
+      "id": "TINY-CAVE",
+      "name": "Cave",
+      "description": "This is a tiny cave with entrances west and north, and a dark, forbidding staircase leading down.",
+      "exits": {
+        "north": "MIRROR-ROOM-2",
+        "west": "WINDING-PASSAGE",
+        "down": "ENTRANCE-TO-HADES"
+      }
+    },
+    {
+      "id": "CELLAR",
+      "name": "Cellar",
+      "description": "Cellar",
+      "exits": {
+        "north": "TROLL-ROOM",
+        "south": "EAST-OF-CHASM",
+        "up": "LIVING-ROOM"
+      }
+    },
+    {
+      "id": "CHASM-ROOM",
+      "name": "Chasm",
+      "description": "A chasm runs southwest to northeast and the path follows it. You are on the south side of the chasm, where a crack opens into a passage.",
+      "exits": {
+        "south": "NS-PASSAGE",
+        "ne": "RESERVOIR-SOUTH",
+        "sw": "EW-PASSAGE",
+        "up": "EW-PASSAGE"
+      }
+    },
+    {
+      "id": "GRATING-CLEARING",
+      "name": "Clearing",
+      "description": "Clearing",
+      "exits": {
+        "south": "PATH",
+        "east": "FOREST-2",
+        "west": "FOREST-1"
+      }
+    },
+    {
+      "id": "CLEARING",
+      "name": "Clearing",
+      "description": "You are in a small clearing in a well marked forest path that extends to the east and west.",
+      "exits": {
+        "north": "FOREST-2",
+        "south": "FOREST-3",
+        "east": "CANYON-VIEW",
+        "west": "EAST-OF-HOUSE"
+      }
+    },
+    {
+      "id": "MINE-1",
+      "name": "Coal Mine",
+      "description": "This is a nondescript part of a coal mine.",
+      "exits": {
+        "north": "GAS-ROOM",
+        "east": "MINE-1",
+        "ne": "MINE-2"
+      }
+    },
+    {
+      "id": "MINE-2",
+      "name": "Coal Mine",
+      "description": "This is a nondescript part of a coal mine.",
+      "exits": {
+        "north": "MINE-2",
+        "south": "MINE-1",
+        "se": "MINE-3"
+      }
+    },
+    {
+      "id": "MINE-3",
+      "name": "Coal Mine",
+      "description": "This is a nondescript part of a coal mine.",
+      "exits": {
+        "south": "MINE-3",
+        "east": "MINE-2",
+        "sw": "MINE-4"
+      }
+    },
+    {
+      "id": "MINE-4",
+      "name": "Coal Mine",
+      "description": "This is a nondescript part of a coal mine.",
+      "exits": {
+        "north": "MINE-3",
+        "west": "MINE-4",
+        "down": "LADDER-TOP"
+      }
+    },
+    {
+      "id": "COLD-PASSAGE",
+      "name": "Cold Passage",
+      "description": "This is a cold and damp corridor where a long east-west passageway turns into a southward path.",
+      "exits": {
+        "south": "MIRROR-ROOM-1",
+        "west": "SLIDE-ROOM"
+      }
+    },
+    {
+      "id": "CYCLOPS-ROOM",
+      "name": "Cyclops Room",
+      "description": "Cyclops Room",
+      "exits": {
+        "east": "STRANGE-PASSAGE",
+        "nw": "MAZE-15",
+        "up": "TREASURE-ROOM"
+      }
+    },
+    {
+      "id": "DAM-ROOM",
+      "name": "Dam",
+      "description": "Dam",
+      "exits": {
+        "north": "DAM-LOBBY",
+        "south": "DEEP-CANYON",
+        "east": "DAM-BASE",
+        "west": "RESERVOIR-SOUTH",
+        "down": "DAM-BASE"
+      }
+    },
+    {
+      "id": "DAM-BASE",
+      "name": "Dam Base",
+      "description": "You are at the base of Flood Control Dam #3, which looms above you and to the north. The river Frigid is flowing by here. Along the river are the White Cliffs which seem to form giant walls stretching from north to south along the shores of the river as it winds its way downstream.",
+      "exits": {
+        "north": "DAM-ROOM",
+        "up": "DAM-ROOM"
+      }
+    },
+    {
+      "id": "DAM-LOBBY",
+      "name": "Dam Lobby",
+      "description": "This room appears to have been the waiting room for groups touring the dam. There are open doorways here to the north and east marked \\\"Private\\\", and there is a path leading south over the top of the dam.",
+      "exits": {
+        "north": "MAINTENANCE-ROOM",
+        "south": "DAM-ROOM",
+        "east": "MAINTENANCE-ROOM"
+      }
+    },
+    {
+      "id": "DAMP-CAVE",
+      "name": "Damp Cave",
+      "description": "This cave has exits to the west and east, and narrows to a crack toward the south. The earth is particularly damp here.",
+      "exits": {
+        "east": "WHITE-CLIFFS-NORTH",
+        "west": "LOUD-ROOM"
+      }
+    },
+    {
+      "id": "DEAD-END-1",
+      "name": "Dead End",
+      "description": "You have come to a dead end in the maze.",
+      "exits": {
+        "south": "MAZE-4"
+      }
+    },
+    {
+      "id": "DEAD-END-2",
+      "name": "Dead End",
+      "description": "You have come to a dead end in the maze.",
+      "exits": {
+        "west": "MAZE-5"
+      }
+    },
+    {
+      "id": "DEAD-END-3",
+      "name": "Dead End",
+      "description": "You have come to a dead end in the maze.",
+      "exits": {
+        "north": "MAZE-8"
+      }
+    },
+    {
+      "id": "DEAD-END-4",
+      "name": "Dead End",
+      "description": "You have come to a dead end in the maze.",
+      "exits": {
+        "south": "MAZE-12"
+      }
+    },
+    {
+      "id": "DEAD-END-5",
+      "name": "Dead End",
+      "description": "You have come to a dead end in the mine.",
+      "exits": {
+        "north": "LADDER-BOTTOM"
+      }
+    },
+    {
+      "id": "DEEP-CANYON",
+      "name": "Deep Canyon",
+      "description": "Deep Canyon",
+      "exits": {
+        "east": "DAM-ROOM",
+        "nw": "RESERVOIR-SOUTH",
+        "sw": "NS-PASSAGE",
+        "down": "LOUD-ROOM"
+      }
+    },
+    {
+      "id": "DOME-ROOM",
+      "name": "Dome Room",
+      "description": "Dome Room",
+      "exits": {
+        "west": "ENGRAVINGS-CAVE",
+        "down": "TORCH-ROOM"
+      }
+    },
+    {
+      "id": "LOWER-SHAFT",
+      "name": "Drafty Room",
+      "description": "This is a small drafty room in which is the bottom of a long shaft. To the south is a passageway and to the east a very narrow passage. In the shaft can be seen a heavy iron chain.",
+      "exits": {
+        "south": "MACHINE-ROOM",
+        "east": "TIMBER-ROOM",
+        "out": "TIMBER-ROOM"
+      }
+    },
+    {
+      "id": "EAST-OF-CHASM",
+      "name": "East of Chasm",
+      "description": "You are on the east edge of a chasm, the bottom of which cannot be seen. A narrow passage goes north, and the path you are on continues to the east.",
+      "exits": {
+        "north": "CELLAR",
+        "east": "GALLERY"
+      }
+    },
+    {
+      "id": "EW-PASSAGE",
+      "name": "East-West Passage",
+      "description": "This is a narrow east-west passageway. There is a narrow stairway leading down at the north end of the room.",
+      "exits": {
+        "north": "CHASM-ROOM",
+        "east": "ROUND-ROOM",
+        "west": "TROLL-ROOM",
+        "down": "CHASM-ROOM"
+      }
+    },
+    {
+      "id": "EGYPT-ROOM",
+      "name": "Egyptian Room",
+      "description": "This is a room which looks like an Egyptian tomb. There is an ascending staircase to the west.",
+      "exits": {
+        "west": "NORTH-TEMPLE",
+        "up": "NORTH-TEMPLE"
+      }
+    },
+    {
+      "id": "END-OF-RAINBOW",
+      "name": "End of Rainbow",
+      "description": "You are on a small, rocky beach on the continuation of the Frigid River past the Falls. The beach is narrow due to the presence of the White Cliffs. The river canyon opens here and sunlight shines in from above. A rainbow crosses over the falls to the east and a narrow path continues to the southwest.",
+      "exits": {
+        "east": "ON-RAINBOW",
+        "ne": "ON-RAINBOW",
+        "sw": "CANYON-BOTTOM",
+        "up": "ON-RAINBOW"
+      }
+    },
+    {
+      "id": "ENGRAVINGS-CAVE",
+      "name": "Engravings Cave",
+      "description": "You have entered a low cave with passages leading northwest and east.",
+      "exits": {
+        "east": "DOME-ROOM",
+        "nw": "ROUND-ROOM"
+      }
+    },
+    {
+      "id": "ENTRANCE-TO-HADES",
+      "name": "Entrance to Hades",
+      "description": "Entrance to Hades",
+      "exits": {
+        "south": "LAND-OF-LIVING-DEAD",
+        "up": "TINY-CAVE",
+        "in": "LAND-OF-LIVING-DEAD"
+      }
+    },
+    {
+      "id": "FOREST-1",
+      "name": "Forest",
+      "description": "This is a forest, with trees in all directions. To the east, there appears to be sunlight.",
+      "exits": {
+        "north": "GRATING-CLEARING",
+        "south": "FOREST-3",
+        "east": "PATH"
+      }
+    },
+    {
+      "id": "FOREST-2",
+      "name": "Forest",
+      "description": "This is a dimly lit forest, with large trees all around.",
+      "exits": {
+        "south": "CLEARING",
+        "east": "MOUNTAINS",
+        "west": "PATH"
+      }
+    },
+    {
+      "id": "MOUNTAINS",
+      "name": "Forest",
+      "description": "The forest thins out, revealing impassable mountains.",
+      "exits": {
+        "north": "FOREST-2",
+        "south": "FOREST-2",
+        "west": "FOREST-2"
+      }
+    },
+    {
+      "id": "FOREST-3",
+      "name": "Forest",
+      "description": "This is a dimly lit forest, with large trees all around.",
+      "exits": {
+        "north": "CLEARING",
+        "west": "FOREST-1",
+        "nw": "SOUTH-OF-HOUSE"
+      }
+    },
+    {
+      "id": "PATH",
+      "name": "Forest Path",
+      "description": "This is a path winding through a dimly lit forest. The path heads north-south here. One particularly large tree with some low branches stands at the edge of the path.",
+      "exits": {
+        "north": "GRATING-CLEARING",
+        "south": "NORTH-OF-HOUSE",
+        "east": "FOREST-2",
+        "west": "FOREST-1",
+        "up": "UP-A-TREE"
+      }
+    },
+    {
+      "id": "RIVER-1",
+      "name": "Frigid River",
+      "description": "You are on the Frigid River in the vicinity of the Dam. The river flows quietly here. There is a landing on the west shore.",
+      "exits": {
+        "west": "DAM-BASE",
+        "down": "RIVER-2"
+      }
+    },
+    {
+      "id": "RIVER-2",
+      "name": "Frigid River",
+      "description": "The river turns a corner here making it impossible to see the Dam. The White Cliffs loom on the east bank and large rocks prevent landing on the west.",
+      "exits": {
+        "down": "RIVER-3"
+      }
+    },
+    {
+      "id": "RIVER-3",
+      "name": "Frigid River",
+      "description": "The river descends here into a valley. There is a narrow beach on the west shore below the cliffs. In the distance a faint rumbling can be heard.",
+      "exits": {
+        "west": "WHITE-CLIFFS-NORTH",
+        "down": "RIVER-4"
+      }
+    },
+    {
+      "id": "RIVER-4",
+      "name": "Frigid River",
+      "description": "The river is running faster here and the sound ahead appears to be that of rushing water. On the east shore is a sandy beach. A small area of beach can also be seen below the cliffs on the west shore.",
+      "exits": {
+        "east": "SANDY-BEACH",
+        "west": "WHITE-CLIFFS-SOUTH",
+        "down": "RIVER-5"
+      }
+    },
+    {
+      "id": "RIVER-5",
+      "name": "Frigid River",
+      "description": "The sound of rushing water is nearly unbearable here. On the east shore is a large landing area.",
+      "exits": {
+        "east": "SHORE"
+      }
+    },
+    {
+      "id": "GALLERY",
+      "name": "Gallery",
+      "description": "This is an art gallery. Most of the paintings have been stolen by vandals with exceptional taste. The vandals left through either the north or west exits.",
+      "exits": {
+        "north": "STUDIO",
+        "west": "EAST-OF-CHASM"
+      }
+    },
+    {
+      "id": "GAS-ROOM",
+      "name": "Gas Room",
+      "description": "This is a small room which smells strongly of coal gas. There is a short climb up some stairs and a narrow tunnel leading east.",
+      "exits": {
+        "east": "MINE-1",
+        "up": "SMELLY-ROOM"
+      }
+    },
+    {
+      "id": "GRATING-ROOM",
+      "name": "Grating Room",
+      "description": "Grating Room",
+      "exits": {
+        "sw": "MAZE-11",
+        "up": "GRATING-CLEARING"
+      }
+    },
+    {
+      "id": "KITCHEN",
+      "name": "Kitchen",
+      "description": "Kitchen",
+      "exits": {
+        "east": "EAST-OF-HOUSE",
+        "west": "LIVING-ROOM",
+        "up": "ATTIC",
+        "down": "STUDIO",
+        "out": "EAST-OF-HOUSE"
+      }
+    },
+    {
+      "id": "LADDER-BOTTOM",
+      "name": "Ladder Bottom",
+      "description": "This is a rather wide room. On one side is the bottom of a narrow wooden ladder. To the west and the south are passages leaving the room.",
+      "exits": {
+        "south": "DEAD-END-5",
+        "west": "TIMBER-ROOM",
+        "up": "LADDER-TOP"
+      }
+    },
+    {
+      "id": "LADDER-TOP",
+      "name": "Ladder Top",
+      "description": "This is a very small room. In the corner is a rickety wooden ladder, leading downward. It might be safe to descend. There is also a staircase leading upward.",
+      "exits": {
+        "up": "MINE-4",
+        "down": "LADDER-BOTTOM"
+      }
+    },
+    {
+      "id": "LAND-OF-LIVING-DEAD",
+      "name": "Land of the Dead",
+      "description": "You have entered the Land of the Living Dead. Thousands of lost souls can be heard weeping and moaning. In the corner are stacked the remains of dozens of previous adventurers less fortunate than yourself. A passage exits to the north.",
+      "exits": {
+        "north": "ENTRANCE-TO-HADES",
+        "out": "ENTRANCE-TO-HADES"
+      }
+    },
+    {
+      "id": "LIVING-ROOM",
+      "name": "Living Room",
+      "description": "Living Room",
+      "exits": {
+        "east": "KITCHEN",
+        "west": "STRANGE-PASSAGE"
+      }
+    },
+    {
+      "id": "LOUD-ROOM",
+      "name": "Loud Room",
+      "description": "Loud Room",
+      "exits": {
+        "east": "DAMP-CAVE",
+        "west": "ROUND-ROOM",
+        "up": "DEEP-CANYON"
+      }
+    },
+    {
+      "id": "MACHINE-ROOM",
+      "name": "Machine Room",
+      "description": "Machine Room",
+      "exits": {
+        "north": "LOWER-SHAFT"
+      }
+    },
+    {
+      "id": "MAINTENANCE-ROOM",
+      "name": "Maintenance Room",
+      "description": "This is what appears to have been the maintenance room for Flood Control Dam #3. Apparently, this room has been ransacked recently, for most of the valuable equipment is gone. On the wall in front of you is a group of buttons colored blue, yellow, brown, and red. There are doorways to the west and south.",
+      "exits": {
+        "south": "DAM-LOBBY",
+        "west": "DAM-LOBBY"
+      }
+    },
+    {
+      "id": "MAZE-1",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "north": "MAZE-1",
+        "south": "MAZE-2",
+        "east": "TROLL-ROOM",
+        "west": "MAZE-4"
+      }
+    },
+    {
+      "id": "MAZE-2",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "south": "MAZE-1",
+        "east": "MAZE-3"
+      }
+    },
+    {
+      "id": "MAZE-3",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "north": "MAZE-4",
+        "west": "MAZE-2",
+        "up": "MAZE-5"
+      }
+    },
+    {
+      "id": "MAZE-4",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "north": "MAZE-1",
+        "east": "DEAD-END-1",
+        "west": "MAZE-3"
+      }
+    },
+    {
+      "id": "MAZE-5",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike. A skeleton, probably the remains of a luckless adventurer, lies here.",
+      "exits": {
+        "north": "MAZE-3",
+        "east": "DEAD-END-2",
+        "sw": "MAZE-6"
+      }
+    },
+    {
+      "id": "MAZE-6",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "east": "MAZE-7",
+        "west": "MAZE-6",
+        "up": "MAZE-9",
+        "down": "MAZE-5"
+      }
+    },
+    {
+      "id": "MAZE-7",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "south": "MAZE-15",
+        "east": "MAZE-8",
+        "west": "MAZE-6",
+        "up": "MAZE-14"
+      }
+    },
+    {
+      "id": "MAZE-8",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "west": "MAZE-8",
+        "ne": "MAZE-7",
+        "se": "DEAD-END-3"
+      }
+    },
+    {
+      "id": "MAZE-9",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "north": "MAZE-6",
+        "south": "MAZE-13",
+        "east": "MAZE-10",
+        "west": "MAZE-12",
+        "nw": "MAZE-9"
+      }
+    },
+    {
+      "id": "MAZE-10",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "east": "MAZE-9",
+        "west": "MAZE-13",
+        "up": "MAZE-11"
+      }
+    },
+    {
+      "id": "MAZE-11",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "ne": "GRATING-ROOM",
+        "nw": "MAZE-13",
+        "sw": "MAZE-12",
+        "down": "MAZE-10"
+      }
+    },
+    {
+      "id": "MAZE-12",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "north": "DEAD-END-4",
+        "east": "MAZE-13",
+        "sw": "MAZE-11",
+        "up": "MAZE-9"
+      }
+    },
+    {
+      "id": "MAZE-13",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "south": "MAZE-10",
+        "east": "MAZE-9",
+        "west": "MAZE-11",
+        "down": "MAZE-12"
+      }
+    },
+    {
+      "id": "MAZE-14",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "south": "MAZE-7",
+        "west": "MAZE-15",
+        "ne": "MAZE-7",
+        "nw": "MAZE-14"
+      }
+    },
+    {
+      "id": "MAZE-15",
+      "name": "Maze",
+      "description": "This is part of a maze of twisty little passages, all alike.",
+      "exits": {
+        "south": "MAZE-7",
+        "west": "MAZE-14",
+        "se": "CYCLOPS-ROOM"
+      }
+    },
+    {
+      "id": "MINE-ENTRANCE",
+      "name": "Mine Entrance",
+      "description": "You are standing at the entrance of what might have been a coal mine. The shaft enters the west wall, and there is another exit on the south end of the room.",
+      "exits": {
+        "south": "SLIDE-ROOM",
+        "west": "SQUEEKY-ROOM",
+        "in": "SQUEEKY-ROOM"
+      }
+    },
+    {
+      "id": "MIRROR-ROOM-1",
+      "name": "Mirror Room",
+      "description": "Mirror Room",
+      "exits": {
+        "north": "COLD-PASSAGE",
+        "east": "SMALL-CAVE",
+        "west": "TWISTING-PASSAGE"
+      }
+    },
+    {
+      "id": "MIRROR-ROOM-2",
+      "name": "Mirror Room",
+      "description": "Mirror Room",
+      "exits": {
+        "north": "NARROW-PASSAGE",
+        "east": "TINY-CAVE",
+        "west": "WINDING-PASSAGE"
+      }
+    },
+    {
+      "id": "NARROW-PASSAGE",
+      "name": "Narrow Passage",
+      "description": "This is a long and narrow corridor where a long north-south passageway briefly narrows even further.",
+      "exits": {
+        "north": "ROUND-ROOM",
+        "south": "MIRROR-ROOM-2"
+      }
+    },
+    {
+      "id": "NORTH-OF-HOUSE",
+      "name": "North of House",
+      "description": "You are facing the north side of a white house. There is no door here, and all the windows are boarded up. To the north a narrow path winds through the trees.",
+      "exits": {
+        "north": "PATH",
+        "east": "EAST-OF-HOUSE",
+        "west": "WEST-OF-HOUSE",
+        "se": "EAST-OF-HOUSE",
+        "sw": "WEST-OF-HOUSE"
+      }
+    },
+    {
+      "id": "NS-PASSAGE",
+      "name": "North-South Passage",
+      "description": "This is a high north-south passage, which forks to the northeast.",
+      "exits": {
+        "north": "CHASM-ROOM",
+        "south": "ROUND-ROOM",
+        "ne": "DEEP-CANYON"
+      }
+    },
+    {
+      "id": "ON-RAINBOW",
+      "name": "On the Rainbow",
+      "description": "You are on top of a rainbow (I bet you never thought you would walk on a rainbow), with a magnificent view of the Falls. The rainbow travels east-west here.",
+      "exits": {
+        "east": "ARAGAIN-FALLS",
+        "west": "END-OF-RAINBOW"
+      }
+    },
+    {
+      "id": "RESERVOIR",
+      "name": "Reservoir",
+      "description": "Reservoir",
+      "exits": {
+        "north": "RESERVOIR-NORTH",
+        "south": "RESERVOIR-SOUTH",
+        "west": "IN-STREAM",
+        "up": "IN-STREAM"
+      }
+    },
+    {
+      "id": "RESERVOIR-NORTH",
+      "name": "Reservoir North",
+      "description": "Reservoir North",
+      "exits": {
+        "north": "ATLANTIS-ROOM",
+        "south": "RESERVOIR"
+      }
+    },
+    {
+      "id": "RESERVOIR-SOUTH",
+      "name": "Reservoir South",
+      "description": "Reservoir South",
+      "exits": {
+        "north": "RESERVOIR",
+        "east": "DAM-ROOM",
+        "west": "STREAM-VIEW",
+        "se": "DEEP-CANYON",
+        "sw": "CHASM-ROOM"
+      }
+    },
+    {
+      "id": "CLIFF-MIDDLE",
+      "name": "Rocky Ledge",
+      "description": "You are on a ledge about halfway up the wall of the river canyon. You can see from here that the main flow from Aragain Falls twists along a passage which it is impossible for you to enter. Below you is the canyon bottom. Above you is more cliff, which appears climbable.",
+      "exits": {
+        "up": "CANYON-VIEW",
+        "down": "CANYON-BOTTOM"
+      }
+    },
+    {
+      "id": "ROUND-ROOM",
+      "name": "Round Room",
+      "description": "This is a circular stone room with passages in all directions. Several of them have unfortunately been blocked by cave-ins.",
+      "exits": {
+        "north": "NS-PASSAGE",
+        "south": "NARROW-PASSAGE",
+        "east": "LOUD-ROOM",
+        "west": "EW-PASSAGE",
+        "se": "ENGRAVINGS-CAVE"
+      }
+    },
+    {
+      "id": "SANDY-BEACH",
+      "name": "Sandy Beach",
+      "description": "You are on a large sandy beach on the east shore of the river, which is flowing quickly by. A path runs beside the river to the south here, and a passage is partially buried in sand to the northeast.",
+      "exits": {
+        "south": "SHORE",
+        "ne": "SANDY-CAVE"
+      }
+    },
+    {
+      "id": "SANDY-CAVE",
+      "name": "Sandy Cave",
+      "description": "This is a sand-filled cave whose exit is to the southwest.",
+      "exits": {
+        "sw": "SANDY-BEACH"
+      }
+    },
+    {
+      "id": "SHAFT-ROOM",
+      "name": "Shaft Room",
+      "description": "This is a large room, in the middle of which is a small shaft descending through the floor into darkness below. To the west and the north are exits from this room. Constructed over the top of the shaft is a metal framework to which a heavy iron chain is attached.",
+      "exits": {
+        "north": "SMELLY-ROOM",
+        "west": "BAT-ROOM"
+      }
+    },
+    {
+      "id": "SHORE",
+      "name": "Shore",
+      "description": "You are on the east shore of the river. The water here seems somewhat treacherous. A path travels from north to south here, the south end quickly turning around a sharp corner.",
+      "exits": {
+        "north": "SANDY-BEACH",
+        "south": "ARAGAIN-FALLS"
+      }
+    },
+    {
+      "id": "SLIDE-ROOM",
+      "name": "Slide Room",
+      "description": "This is a small chamber, which appears to have been part of a coal mine. On the south wall of the chamber the letters \\\"Granite Wall\\\" are etched in the rock. To the east is a long passage, and there is a steep metal slide twisting downward. To the north is a small opening.",
+      "exits": {
+        "north": "MINE-ENTRANCE",
+        "east": "COLD-PASSAGE",
+        "down": "CELLAR"
+      }
+    },
+    {
+      "id": "SMELLY-ROOM",
+      "name": "Smelly Room",
+      "description": "This is a small nondescript room. However, from the direction of a small descending staircase a foul odor can be detected. To the south is a narrow tunnel.",
+      "exits": {
+        "south": "SHAFT-ROOM",
+        "down": "GAS-ROOM"
+      }
+    },
+    {
+      "id": "SOUTH-OF-HOUSE",
+      "name": "South of House",
+      "description": "You are facing the south side of a white house. There is no door here, and all the windows are boarded.",
+      "exits": {
+        "south": "FOREST-3",
+        "east": "EAST-OF-HOUSE",
+        "west": "WEST-OF-HOUSE",
+        "ne": "EAST-OF-HOUSE",
+        "nw": "WEST-OF-HOUSE"
+      }
+    },
+    {
+      "id": "SQUEEKY-ROOM",
+      "name": "Squeaky Room",
+      "description": "You are in a small room. Strange squeaky sounds may be heard coming from the passage at the north end. You may also escape to the east.",
+      "exits": {
+        "north": "BAT-ROOM",
+        "east": "MINE-ENTRANCE"
+      }
+    },
+    {
+      "id": "STONE-BARROW",
+      "name": "Stone Barrow",
+      "description": "You are standing in front of a massive barrow of stone. In the east face is a huge stone door which is open. You cannot see into the dark of the tomb.",
+      "exits": {
+        "ne": "WEST-OF-HOUSE"
+      }
+    },
+    {
+      "id": "STRANGE-PASSAGE",
+      "name": "Strange Passage",
+      "description": "This is a long passage. To the west is one entrance. On the east there is an old wooden door, with a large opening in it (about cyclops sized).",
+      "exits": {
+        "east": "LIVING-ROOM",
+        "west": "CYCLOPS-ROOM",
+        "in": "CYCLOPS-ROOM"
+      }
+    },
+    {
+      "id": "IN-STREAM",
+      "name": "Stream",
+      "description": "You are on the gently flowing stream. The upstream route is too narrow to navigate, and the downstream route is invisible due to twisting walls. There is a narrow beach to land on.",
+      "exits": {
+        "east": "RESERVOIR",
+        "down": "RESERVOIR"
+      }
+    },
+    {
+      "id": "STREAM-VIEW",
+      "name": "Stream View",
+      "description": "You are standing on a path beside a gently flowing stream. The path follows the stream, which flows from west to east.",
+      "exits": {
+        "east": "RESERVOIR-SOUTH"
+      }
+    },
+    {
+      "id": "STUDIO",
+      "name": "Studio",
+      "description": "This appears to have been an artist's studio. The walls and floors are splattered with paints of 69 different colors. Strangely enough, nothing of value is hanging here. At the south end of the room is an open door (also covered with paint). A dark and narrow chimney leads up from a fireplace; although you might be able to get up it, it seems unlikely you could get back down.",
+      "exits": {
+        "south": "GALLERY"
+      }
+    },
+    {
+      "id": "NORTH-TEMPLE",
+      "name": "Temple",
+      "description": "This is the north end of a large temple. On the east wall is an ancient inscription, probably a prayer in a long-forgotten language. Below the prayer is a staircase leading down. The west wall is solid granite. The exit to the north end of the room is through huge marble pillars.",
+      "exits": {
+        "north": "TORCH-ROOM",
+        "south": "SOUTH-TEMPLE",
+        "east": "EGYPT-ROOM",
+        "up": "TORCH-ROOM",
+        "down": "EGYPT-ROOM",
+        "out": "TORCH-ROOM"
+      }
+    },
+    {
+      "id": "TROLL-ROOM",
+      "name": "The Troll Room",
+      "description": "This is a small room with passages to the east and south and a forbidding hole leading west. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.",
+      "exits": {
+        "south": "CELLAR",
+        "east": "EW-PASSAGE",
+        "west": "MAZE-1"
+      }
+    },
+    {
+      "id": "TIMBER-ROOM",
+      "name": "Timber Room",
+      "description": "This is a long and narrow passage, which is cluttered with broken timbers. A wide passage comes from the east and turns at the west end of the room into a very narrow passageway. From the west comes a strong draft.",
+      "exits": {
+        "east": "LADDER-BOTTOM",
+        "west": "LOWER-SHAFT"
+      }
+    },
+    {
+      "id": "TORCH-ROOM",
+      "name": "Torch Room",
+      "description": "Torch Room",
+      "exits": {
+        "south": "NORTH-TEMPLE",
+        "down": "NORTH-TEMPLE"
+      }
+    },
+    {
+      "id": "TREASURE-ROOM",
+      "name": "Treasure Room",
+      "description": "This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.",
+      "exits": {
+        "down": "CYCLOPS-ROOM"
+      }
+    },
+    {
+      "id": "TWISTING-PASSAGE",
+      "name": "Twisting Passage",
+      "description": "This is a winding passage. It seems that there are only exits on the east and north.",
+      "exits": {
+        "north": "MIRROR-ROOM-1",
+        "east": "SMALL-CAVE"
+      }
+    },
+    {
+      "id": "UP-A-TREE",
+      "name": "Up a Tree",
+      "description": "Up a Tree",
+      "exits": {
+        "down": "PATH"
+      }
+    },
+    {
+      "id": "WEST-OF-HOUSE",
+      "name": "West of House",
+      "description": "West of House",
+      "exits": {
+        "north": "NORTH-OF-HOUSE",
+        "south": "SOUTH-OF-HOUSE",
+        "west": "FOREST-1",
+        "ne": "NORTH-OF-HOUSE",
+        "se": "SOUTH-OF-HOUSE",
+        "sw": "STONE-BARROW",
+        "in": "STONE-BARROW"
+      }
+    },
+    {
+      "id": "WHITE-CLIFFS-NORTH",
+      "name": "White Cliffs Beach",
+      "description": "You are on a narrow strip of beach which runs along the base of the White Cliffs. There is a narrow path heading south along the Cliffs and a tight passage leading west into the cliffs themselves.",
+      "exits": {
+        "south": "WHITE-CLIFFS-SOUTH",
+        "west": "DAMP-CAVE"
+      }
+    },
+    {
+      "id": "WHITE-CLIFFS-SOUTH",
+      "name": "White Cliffs Beach",
+      "description": "You are on a rocky, narrow strip of beach beside the Cliffs. A narrow path leads north along the shore.",
+      "exits": {
+        "north": "WHITE-CLIFFS-NORTH"
+      }
+    },
+    {
+      "id": "WINDING-PASSAGE",
+      "name": "Winding Passage",
+      "description": "This is a winding passage. It seems that there are only exits on the east and north.",
+      "exits": {
+        "north": "MIRROR-ROOM-2",
+        "east": "TINY-CAVE"
+      }
+    }
+  ]
+}

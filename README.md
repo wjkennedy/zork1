@@ -31,3 +31,21 @@ __What is the Purpose of this Repository__
 This collection is meant for education, discussion, and historical work, allowing researchers and students to study how code was made for these interactive fiction games and how the system dealt with input and processing.
 
 Researchers are encouraged to share their discoveries about the information in this source code and the history of Infocom and its many innovative employees.
+
+## Map export and rendering
+
+Room definitions in `1dungeon.zil` can be converted into a reusable JSON map so that different renderers (Graphviz, Mermaid, Pico-8, etc.) can share the same source data. The helper script in `tools/map_system.py` builds the JSON and can render it into multiple formats:
+
+```bash
+# Generate the intermediate JSON (already checked in at maps/zork1_map.json)
+python tools/map_system.py export --zil 1dungeon.zil --json maps/zork1_map.json
+
+# Render to Graphviz DOT
+python tools/map_system.py render --json maps/zork1_map.json --format dot --out maps/zork1_map.dot
+
+# Render to a Mermaid diagram
+python tools/map_system.py render --json maps/zork1_map.json --format mermaid --out maps/zork1_map.mmd
+
+# Render to a Markdown adjacency table
+python tools/map_system.py render --json maps/zork1_map.json --format adjacency --out maps/zork1_map.md
+```
