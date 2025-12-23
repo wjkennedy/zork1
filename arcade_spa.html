@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A9 Arcade</title>
+  <style>
+    :root {
+      --bg: #0c0f1a;
+      --panel: #12172b;
+      --accent: #7b61ff;
+      --text: #e8ecf6;
+      --muted: #95a1c4;
+      --border: #1f2540;
+      --success: #30e0a1;
+      --warning: #ffcd55;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(123, 97, 255, 0.15), transparent 25%),
+                  radial-gradient(circle at 80% 0%, rgba(48, 224, 161, 0.12), transparent 22%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      background: rgba(12, 15, 26, 0.8);
+      z-index: 10;
+    }
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--success));
+      display: inline-block;
+    }
+    nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    nav button {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border 0.2s ease, transform 0.15s ease;
+    }
+    nav button:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px;
+      display: grid;
+      gap: 18px;
+    }
+    .panel {
+      background: rgba(18, 23, 43, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+    }
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    h1, h2, h3, h4 { margin: 6px 0 12px; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: var(--muted); }
+    p { margin: 0 0 12px; color: #ced5ec; line-height: 1.6; }
+    ul {
+      padding-left: 18px;
+      margin: 8px 0 0;
+      color: #ced5ec;
+      line-height: 1.6;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(123, 97, 255, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(123, 97, 255, 0.25);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .badge {
+      background: rgba(48, 224, 161, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(48, 224, 161, 0.3);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--accent), #9f7bff);
+      color: #0c0f1a;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(123, 97, 255, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .cta:hover { transform: translateY(-1px); box-shadow: 0 12px 34px rgba(123, 97, 255, 0.45); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      background: rgba(12, 15, 26, 0.55);
+      display: grid;
+      gap: 6px;
+    }
+    .card h4 { margin: 0; }
+    .card small { color: var(--muted); }
+    .meter {
+      width: 100%;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .meter .fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--success), #8ef7cd, #ffe27a);
+      width: 100%;
+      transition: width 0.4s ease;
+    }
+    .pill-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .pill {
+      background: rgba(149, 161, 196, 0.15);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+    .list-row { display: flex; flex-direction: column; gap: 8px; }
+    .list-row strong { color: var(--text); }
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 20px 0 30px;
+      font-size: 13px;
+    }
+    @media (max-width: 640px) {
+      header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      nav { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="brand-dot"></span> A9 Arcade</div>
+    <nav id="nav"></nav>
+  </header>
+  <main>
+    <section class="panel two-column">
+      <div>
+        <div class="badge">Arcade open</div>
+        <h1>Utilities, agents, and automations behind one set of doors.</h1>
+        <p>Start with 30 minutes of play. Reload credits anytime—$9 to get started via Shopify.</p>
+        <div class="pill-row">
+          <span class="pill">Microservices</span>
+          <span class="pill">GPTs &amp; Agents</span>
+          <span class="pill">SPAs &amp; Visuals</span>
+          <span class="pill">Automations</span>
+          <span class="pill">One-liners</span>
+        </div>
+        <p style="margin-top:14px;">William Kennedy — June 13, 2024<br/><small>Converting operational and customer signals into structured intelligence for AI-augmented performance.</small></p>
+        <button class="cta" onclick="scrollToSection('playground')">Load credits &amp; enter</button>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <h3>Arcade Wallet</h3>
+          <span class="chip">30 min credit</span>
+        </div>
+        <div class="meter"><div class="fill" id="credit-fill"></div></div>
+        <div style="display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-top:6px;">
+          <span>Active session</span><span id="credit-label">100% remaining</span>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Shopify checkout</span>
+          <span class="pill">Reload anytime</span>
+          <span class="pill">Match bonus ready</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="experience">
+      <h2>The Experience</h2>
+      <div class="grid">
+        <div class="card">
+          <h4>Strategy DRC</h4>
+          <p>Decision-ready canvases with sidecar research agents and playbook templates.</p>
+        </div>
+        <div class="card">
+          <h4>Idea-to-Execution</h4>
+          <p>Brainstorm with thought-leader embodiments, then ship via codegen, tests, and deployment helpers.</p>
+        </div>
+        <div class="card">
+          <h4>Signals → Intelligence</h4>
+          <p>Turn operational and customer signals into structured intelligence for clarity and predictability.</p>
+        </div>
+        <div class="card">
+          <h4>Playful Productivity</h4>
+          <p>From Streamlit quick wins to Rush pinball pacing—utility with a dose of fun.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="value">
+      <h2>Value Snapshot</h2>
+      <div class="two-column">
+        <div>
+          <ul>
+            <li><strong>Rapid idea-to-execution:</strong> LLM pairers, code optimization, and launch rails.</li>
+            <li><strong>Microservice-native:</strong> Build for interconnected services—order to cash as a handshake, not a monolith.</li>
+            <li><strong>Operational clarity:</strong> Generate structured intelligence to guide teams and roadmaps.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Arcade Pricing</h4>
+          <p><strong>$9 to start</strong> • 30-minute credit • Shopify checkout • Reload anytime.</p>
+          <div class="list-row">
+            <span><strong>Session focus:</strong> prototype, validate, or launch a utility.</span>
+            <span><strong>Match wins:</strong> pinball-style bonuses unlock extra credits.</span>
+            <span><strong>Sharing:</strong> save artifacts, deploy mini SPAs, and export playbooks.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="playground">
+      <h2>Arcade Gallery</h2>
+      <p>Curated zones—mix and match utilities, agents, and visuals.</p>
+      <div class="grid" id="gallery"></div>
+    </section>
+
+    <section class="panel" id="why">
+      <h2>Why Now</h2>
+      <div class="two-column">
+        <div>
+          <p>Microservice architectures already power everyday experiences (think marketplaces). Each listing, checkout, billing, and shipping step is a coordinated service.</p>
+          <p>Teams building and improving those flows need accelerators at their fingertips. The A9 Arcade brings them together so inspiration and execution live side by side.</p>
+        </div>
+        <div class="card">
+          <h4>Order-to-Cash Handshake</h4>
+          <ul>
+            <li>List → Price → Merchandising</li>
+            <li>Cart → Checkout → Payments (Shopify)</li>
+            <li>Fulfillment → Shipping → Notifications</li>
+            <li>Signals → Analytics → Next-best action</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="founder">
+      <h2>Founder’s Note</h2>
+      <p>“Converting operational and customer signals into structured intelligence and modernizing platforms for AI-augmented performance, clarity, and predictability.” — William Kennedy, June 13, 2024</p>
+      <div class="pill-row">
+        <span class="pill">Operational intelligence</span>
+        <span class="pill">Microservices</span>
+        <span class="pill">Agentic workflows</span>
+        <span class="pill">Experience-first</span>
+      </div>
+    </section>
+  </main>
+  <div class="footer">A9 Arcade — Microservices, GPTs, Agents, SPAs, Automations, One-offs, One-liners, and more.</div>
+  <script>
+    const navItems = [
+      { id: "experience", label: "Experience" },
+      { id: "value", label: "Value" },
+      { id: "playground", label: "Arcade Gallery" },
+      { id: "why", label: "Why Now" },
+      { id: "founder", label: "Founder" },
+    ];
+
+    const gallery = [
+      {
+        title: "A9 Strategy DRC",
+        desc: "Decision-ready canvases, risk radars, and research copilots.",
+        tags: ["Strategy", "Research agents", "Templates"],
+      },
+      {
+        title: "Data Translation Lab",
+        desc: "Streamlit-style translators and Plotly visuals for quick clarity.",
+        tags: ["Data", "Visuals", "Pipelines"],
+      },
+      {
+        title: "Agent Gallery",
+        desc: "Embodiments of thought leaders, marketers, musicians, and game designers.",
+        tags: ["LLMs", "Personas", "Co-creation"],
+      },
+      {
+        title: "Automation Corner",
+        desc: "Reusable microservices, one-offs, and one-liners to unblock ops.",
+        tags: ["Microservices", "CLI", "Integrations"],
+      },
+      {
+        title: "Launchpad SPAs",
+        desc: "Mini single-page apps that wrap utilities with a polished UI.",
+        tags: ["SPA", "UI", "Deployment"],
+      },
+      {
+        title: "Order-to-Cash Rails",
+        desc: "Pre-built flows for listing, checkout, billing, and fulfillment.",
+        tags: ["Commerce", "Payments", "Fulfillment"],
+      },
+    ];
+
+    const navEl = document.getElementById("nav");
+    navItems.forEach(item => {
+      const btn = document.createElement("button");
+      btn.textContent = item.label;
+      btn.onclick = () => scrollToSection(item.id);
+      navEl.appendChild(btn);
+    });
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+
+    const galleryEl = document.getElementById("gallery");
+    gallery.forEach(card => {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <h4>${card.title}</h4>
+        <p>${card.desc}</p>
+        <div class="pill-row">${card.tags.map(t => `<span class="pill">${t}</span>`).join("")}</div>
+      `;
+      galleryEl.appendChild(div);
+    });
+
+    const creditFill = document.getElementById("credit-fill");
+    const creditLabel = document.getElementById("credit-label");
+    let credit = 100;
+    setInterval(() => {
+      credit = Math.max(0, credit - 1);
+      creditFill.style.width = credit + "%";
+      creditLabel.textContent = `${credit}% remaining`;
+      if (credit <= 15) {
+        creditFill.style.background = `linear-gradient(90deg, var(--warning), #ff8f70)`;
+      }
+    }, 1500);
+  </script>
+</body>
+</html>
